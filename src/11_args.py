@@ -55,11 +55,8 @@ print(f3(8))     # Should print 9
 # Note: Google "python keyword arguments".
 
 def f4(a=None,**kwargs):
-    if type(a) == dict:
-        print(a)
-    else:
-        for key, value in kwargs.items():
-            print(f"key: {key}, value: {value}")
+    for key, value in kwargs.items():
+        print(f"key: {key}, value: {value}")
 
 print("Function 4: ")
 
@@ -80,4 +77,4 @@ d = {
 }
 
 # How do you have to modify the f4 call below to make this work?
-f4(d)
+f4(**d)
