@@ -39,14 +39,25 @@ cy = dt.year
 # Set Calendar Month
 cm = dt.month
 
-user_input = "" #input("Pick a Date: ")
+# Get User Input
+user_input = input("Pick a Date: ")
+selectedDate = ""
 
+if user_input == "":
+  selectedDate = "Today is " + str(dt)
+else:
+  inputResults = user_input.split()
+
+  if len(inputResults) == 1:
+    cm = inputResults[0]
+
+print(" ")
+print(selectedDate)
+print(" ")
+  
+# Calendar
 c = calendar.TextCalendar(calendar.SUNDAY)
 
 # Print Calendar
 printCalendar = c.formatmonth(cy, cm)
 print(printCalendar)
-
-
-if user_input == "":
-  selectedDate = "today"
